@@ -96,7 +96,5 @@ Mobile: 1 coluna de cards, botões e textos redimensionados.
 💡 Customização
 
 Alterar cores e gradientes: editar background e linear-gradient nas classes .card-gradient-container e .card-2-band.
-
-Alterar títulos e textos: editar conteúdo dentro de <h1> e <p>.
-
+Alterar textos e títulos dentro de <p> e <h1>.
 Atualizar galeria de projetos: substituir imagens dentro da pasta Galeria_portfólioI e ajustar <div class="slides"> correspondente.
