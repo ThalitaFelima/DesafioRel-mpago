@@ -100,24 +100,3 @@ Alterar cores e gradientes: editar background e linear-gradient nas classes .car
 Alterar títulos e textos: editar conteúdo dentro de <h1> e <p>.
 
 Atualizar galeria de projetos: substituir imagens dentro da pasta Galeria_portfólioI e ajustar <div class="slides"> correspondente.
-
-📂 Estrutura do Código
-
-HTML semântica para acessibilidade.
-
-CSS embutido para controle total do design.
-
-Layout baseado em CSS Grid e Flexbox.
-
-Checkbox toggles para modais, evitando dependência de JS.
-
-🔗 Contato
-
-Entre em contato diretamente via WhatsApp:
-
-https://wa.me/5532988397818
-
-📜 Licença
-
-Este projeto está licenciado sob a MIT License
-
