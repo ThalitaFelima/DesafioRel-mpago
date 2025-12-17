@@ -1,172 +1,423 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Thalita de Paula</title>
+<meta charset="UTF-8">
+<title>Thalita de Paula</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  font-family: 'Advent Pro', sans-serif;
+  background-color:#081f21;
+  color:white;
+}
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: 'Advent Pro', sans-serif;
-      background-color: #081f21;
-      color: white;
-    }
+header {
+  padding: 3rem 4rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-    /* HEADER */
-    .site-header {
-      padding: 3rem 4rem;
-      display: flex;
-      justify-content: center;
-    }
+.site-logo {
+  height: 220px;
+  width: auto;
+  margin-left: 70px;
+  max-height: 120px;
+}
 
-    .site-logo {
-      max-height: 180px;
-    }
+main {
+  flex:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:20px;
+  position:relative;
+}
 
-    /* GRID PRINCIPAL 2x2 */
-    main {
-      flex: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      position: relative;
-    }
+.card {
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+  border-radius:15px;
+  width:100%;
+}
 
-    /* CARDS */
-    .card {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-    }
+.card.top { 
+  background-color:#081f21; 
+  font-size:2rem; 
+  font-weight:600; 
+  min-height: 550px; /* aumentado */
+  padding: 3rem 3rem;
+}
 
-    /* Cards superiores têm fundo sólido */
-    .card.top {
-      background-color: #081f21;
-    }
+.card-1-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 80%;
+  padding: 2rem;
+}
 
-    /* Cards inferiores deixam a faixa aparecer */
-    .card.bottom {
-      background-color: transparent;
-    }
+.card-1-title {
+  font-size:65px; /* aumentado */
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 2rem;
+  line-height:1.2;
+}
 
-    /* ======================
-       CARD 2
-       ====================== */
-    .card-2 {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: center;
-      background-color: #081f21;
-    }
+.card-1-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #02735F;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+}
 
-    .card-2-image {
-      height: 100%;
-    }
+.card-1-button:hover { background-color: #025a49; }
 
-    .card-2-image img {
-      height: 100%;
-      width: auto;
-      object-fit: contain;
-      padding: 1rem;
-      display: block;
-    }
+.card-1-text {
+  font-size: 2rem; /* aumentado */
+  line-height: 3rem;
+  text-align: justify;
+}
 
-    .card-2-band {
-      height: 50%;
-      align-self: center;
-      background: linear-gradient(
-        to right,
-        #081f21 0%,
-        #004040 50%,
-        #0a2124 100%
-      );
-    }
+/* CARD 2 - mantido original */
+.card-2 { 
+  display:grid; 
+  grid-template-columns:auto 1fr; 
+  align-items:center; 
+  background-color:#081f21; 
+  padding:1rem;
+}
+.card-2-image img { 
+  max-height:400px; 
+  width:auto; 
+  object-fit:contain; 
+  padding:1rem; 
+  display:block; 
+  loading: lazy;
+}
+.card-2-band { 
+  min-height:200px;
+  background:linear-gradient(to right,#081f21 0%,#004040 50%,#0a2124 100%);
+  display:flex; 
+  justify-content:center; 
+  align-items:center; 
+  padding:2rem; 
+  position:relative; 
+}
+.card-2-text { font-size:2rem; line-height:3rem; text-align:justify; max-width:80%; }
 
-    /* ======================
-       FAIXA CONTÍNUA (LINHA INFERIOR)
-       ====================== */
-    .bottom-band {
-      grid-column: 1 / -1;
-      grid-row: 2;
-      align-self: center;
-      height: 50%;
-      background: linear-gradient(
-        to right,
-        #081f21 0%,
-        #004040 50%,
-        #0a2124 100%
-      );
-      z-index: 1;
-    }
+/* Card 3 e 4 - degrade menor e proporcional */
+.card-gradient-container {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: linear-gradient(to right, #081f21 0%, #004040 50%, #0a2124 100%);
+  border-radius: 50px;
+  padding: 1.5rem 2rem;
+  align-items: center;
+  justify-items: center;
+  height: auto;
+  min-height: 350px;
+}
 
-    /* FOOTER */
-    footer {
-      background-color: #004040;
-      padding: 1rem;
-      text-align: center;
-    }
+.card.card-3, .card.card-4 {
+  background: transparent;
+  border-radius: 50px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-weight:600;
+  text-align:center;
+  position: relative;
+}
 
-    /* RESPONSIVO */
-    @media (max-width: 800px) {
-      main {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
-      }
+.card.card-3 { 
+  font-size:60px;
+  justify-content:center;
+  padding-left: 2rem;
+  max-width: 100%;
+}
 
-      .bottom-band {
-        grid-row: auto;
-        height: 25%;
-      }
+.card.card-4 { 
+  font-size:2rem;
+  justify-content:center;
+}
 
-      .card.bottom {
-        background-color: #081f21;
-      }
-    }
-  </style>
+.card-4 .buttons-container {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  gap: 40px;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.card-4 .circle-button {
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.card-4 .circle-button:hover {
+  background-color: #004040;
+  color: white;
+}
+
+footer {
+  background-color: #004040;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* MODAIS */
+.modal-toggle { display:none; }
+
+.modal {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-toggle:checked + .modal { display:flex; }
+
+.modal-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #081f21;
+  padding: 1rem;
+  width: 95%;
+  height: 90%;
+  max-width: 1400px;
+  max-height: 900px;
+  border-radius: 15px;
+  overflow: auto;
+}
+
+.modal-close {
+  position:absolute;
+  top:20px; right:20px;
+  width:50px; height:50px;
+  background:#004040;
+  display:flex; justify-content:center; align-items:center;
+  font-weight:bold; font-size:1.2rem; cursor:pointer;
+  color:white; z-index:1010;
+  border-radius:10px;
+  transition:all 0.3s;
+}
+.modal-close:hover { background:#006060; }
+
+/* GALERIA */
+.slides-container { position:relative; width:100%; height:100%; }
+.slides-container input[type="radio"] { display:none; }
+
+.slides { position:relative; width:100%; height:100%; }
+.slide { position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; display:flex; justify-content:center; align-items:center; transition:opacity 0.5s; }
+.slide img { max-width:100%; max-height:100%; loading: lazy; }
+
+.indicators { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:12px; pointer-events:all; z-index:5; }
+.indicators label { width:15px; height:15px; border-radius:50%; background:rgba(255,255,255,0.5); cursor:pointer; transition:all 0.3s; }
+
+/* Indicadores ativos */
+#slide1-1:checked ~ .slides #s1-1,
+#slide1-2:checked ~ .slides #s1-2,
+#slide1-3:checked ~ .slides #s1-3,
+#slide1-4:checked ~ .slides #s1-4,
+#slide1-5:checked ~ .slides #s1-5,
+#slide2-1:checked ~ .slides #s2-1,
+#slide2-2:checked ~ .slides #s2-2,
+#slide2-3:checked ~ .slides #s2-3,
+#slide3-1:checked ~ .slides #s3-1,
+#slide3-2:checked ~ .slides #s3-2,
+#slide3-3:checked ~ .slides #s3-3 { opacity:1; position:relative; }
+
+#slide1-1:checked ~ .indicators label[for="slide1-1"],
+#slide1-2:checked ~ .indicators label[for="slide1-2"],
+#slide1-3:checked ~ .indicators label[for="slide1-3"],
+#slide1-4:checked ~ .indicators label[for="slide1-4"],
+#slide1-5:checked ~ .indicators label[for="slide1-5"],
+#slide2-1:checked ~ .indicators label[for="slide2-1"],
+#slide2-2:checked ~ .indicators label[for="slide2-2"],
+#slide2-3:checked ~ .indicators label[for="slide2-3"],
+#slide3-1:checked ~ .indicators label[for="slide3-1"],
+#slide3-2:checked ~ .indicators label[for="slide3-2"],
+#slide3-3:checked ~ .indicators label[for="slide3-3"] { background:white; }
+
+/* RESPONSIVIDADE */
+@media (max-width:1200px) {
+  .site-logo { max-height:150px; margin-left:40px; }
+  .card-1-title { font-size:50px; }
+  .card-1-text { font-size:1.6rem; }
+  .card-2-text { font-size:1.8rem; }
+}
+
+@media (max-width:800px) {
+  main { grid-template-columns:1fr; grid-template-rows:auto; }
+  .card-gradient-container { grid-template-columns:1fr; padding:1rem; height:auto; min-height:350px; }
+  .card.card-3 { justify-content:center; padding-left:0; font-size:40px; }
+  .card-4 .buttons-container { flex-wrap:wrap; gap:20px; }
+  .card-4 .circle-button { width:180px; height:180px; font-size:1.2rem; }
+}
+
+@media (max-width:500px) {
+  header { padding:2rem 1rem; }
+  .site-logo { max-height:100px; margin-left:20px; }
+  .card-1-title { font-size:35px; }
+  .card-1-text { font-size:1.4rem; }
+  .card-2-text { font-size:1.6rem; }
+  .card-4 .circle-button { width:150px; height:150px; font-size:1rem; }
+}
+</style>
 </head>
 
 <body>
+<header class="site-header">
+  <img src="logo.png" alt="Logotipo da Thalita de Paula" class="site-logo">
+</header>
 
-  <header class="site-header">
-    <img src="logo.png" alt="Logotipo" class="site-logo">
-  </header>
+<main>
+ <div class="card top">
+  <div class="card-1-content">
+    <h1 class="card-1-title">EU SOU A THALITA E VOU TE AJUDAR A CRIAR O SEU SITE!</h1>
+    <a href="https://wa.me/5532988397818" target="_blank" rel="noopener noreferrer" class="card-1-button">Entre em contato</a>
+    <p class="card-1-text">
+      Formada em Ciência de Dados, com especialização em UX/UI Design pela Alpha EdTech, construí um portfólio sólido e diverso, reunindo projetos que refletem cuidado, estratégia e atenção à experiência do usuário. Esse trabalho consistente resultou em um histórico de 100% de aprovação entre os clientes, fruto de entregas bem pensadas e focadas em resultados.
+    </p>
+  </div>
+</div>
 
-  <main>
-    <div class="card top">Card 1</div>
+<div class="card card-2 top">
+  <div class="card-2-image">
+    <img src="profile.png" alt="Foto do perfil de Thalita de Paula">
+  </div>
+  <div class="card-2-band">
+    <p class="card-2-text">
+      Dê uma olhada no meu portfólio logo abaixo, onde reuni alguns modelos e projetos que mostram um pouco do meu trabalho e do meu processo criativo. Caso algo chame sua atenção, será um prazer receber seu contato e trocar uma ideia.
+    </p>
+  </div>
+</div>
 
-    <div class="card card-2 top">
-      <div class="card-2-image">
-        <img src="profile.png" alt="Imagem do Card 2">
-      </div>
-      <div class="card-2-band"></div>
+<div class="card-gradient-container">
+  <div class="card card-3">CONHEÇA MEU PORTFÓLIO</div>
+  <div class="card card-4">
+    <div class="buttons-container">
+      <label for="modal1" class="circle-button">1</label>
+      <label for="modal2" class="circle-button">2</label>
+      <label for="modal3" class="circle-button">3</label>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>© todos os direitos reservados</footer>
+
+<!-- MODAIS -->
+<input type="checkbox" id="modal1" class="modal-toggle">
+<div class="modal">
+  <label for="modal1" class="modal-close">X</label>
+  <div class="modal-content slides-container">
+    <input type="radio" id="slide1-1" name="slides1" checked>
+    <input type="radio" id="slide1-2" name="slides1">
+    <input type="radio" id="slide1-3" name="slides1">
+    <input type="radio" id="slide1-4" name="slides1">
+    <input type="radio" id="slide1-5" name="slides1">
+
+    <div class="slides">
+      <div class="slide" id="s1-1"><img src="Galeria_portfólioI/prt1_1.png" alt="Projeto 1 do portfólio"></div>
+      <div class="slide" id="s1-2"><img src="Galeria_portfólioI/prt1_2.png" alt="Projeto 2 do portfólio"></div>
+      <div class="slide" id="s1-3"><img src="Galeria_portfólioI/prt1_3.png" alt="Projeto 3 do portfólio"></div>
+      <div class="slide" id="s1-4"><img src="Galeria_portfólioI/prt1_4.png" alt="Projeto 4 do portfólio"></div>
+      <div class="slide" id="s1-5"><img src="Galeria_portfólioI/prt1_5.png" alt="Projeto 5 do portfólio"></div>
     </div>
 
-    <div class="card bottom">Card 3</div>
-    <div class="card bottom">Card 4</div>
+    <div class="indicators">
+      <label for="slide1-1"></label>
+      <label for="slide1-2"></label>
+      <label for="slide1-3"></label>
+      <label for="slide1-4"></label>
+      <label for="slide1-5"></label>
+    </div>
+  </div>
+</div>
 
-    <!-- faixa contínua real -->
-    <div class="bottom-band"></div>
-  </main>
+<input type="checkbox" id="modal2" class="modal-toggle">
+<div class="modal">
+  <label for="modal2" class="modal-close">X</label>
+  <div class="modal-content slides-container">
+    <input type="radio" id="slide2-1" name="slides2" checked>
+    <input type="radio" id="slide2-2" name="slides2">
+    <input type="radio" id="slide2-3" name="slides2">
+    <div class="slides">
+      <div class="slide" id="s2-1"><img src="Galeria_portfólioI/prt2_1.png" alt="Projeto 1 do portfólio 2"></div>
+      <div class="slide" id="s2-2"><img src="Galeria_portfólioI/prt2_2.png" alt="Projeto 2 do portfólio 2"></div>
+      <div class="slide" id="s2-3"><img src="Galeria_portfólioI/prt2_3.png" alt="Projeto 3 do portfólio 2"></div>
+    </div>
+    <div class="indicators">
+      <label for="slide2-1"></label>
+      <label for="slide2-2"></label>
+      <label for="slide2-3"></label>
+    </div>
+  </div>
+</div>
 
-  <footer>
-    Footer da Página
-  </footer>
-
+<input type="checkbox" id="modal3" class="modal-toggle">
+<div class="modal">
+  <label for="modal3" class="modal-close">X</label>
+  <div class="modal-content slides-container">
+    <input type="radio" id="slide3-1" name="slides3" checked>
+    <input type="radio" id="slide3-2" name="slides3">
+    <input type="radio" id="slide3-3" name="slides3">
+    <div class="slides">
+      <div class="slide" id="s3-1"><img src="Galeria_portfólioI/prt3_1.png" alt="Projeto 1 do portfólio 3"></div>
+      <div class="slide" id="s3-2"><img src="Galeria_portfólioI/prt3_2.png" alt="Projeto 2 do portfólio 3"></div>
+      <div class="slide" id="s3-3"><img src="Galeria_portfólioI/prt3_3.png" alt="Projeto 3 do portfólio 3"></div>
+    </div>
+    <div class="indicators">
+      <label for="slide3-1"></label>
+      <label for="slide3-2"></label>
+      <label for="slide3-3"></label>
+    </div>
+  </div>
+</div>
 </body>
 </html>
