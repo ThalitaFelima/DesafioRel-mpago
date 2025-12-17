@@ -93,8 +93,22 @@ Tablet: cards ajustados e degradê reduzido.
 
 Mobile: 1 coluna de cards, botões e textos redimensionados.
 
-💡 Customização
+📂 Estrutura do Código
 
-Alterar cores e gradientes: editar background e linear-gradient nas classes .card-gradient-container e .card-2-band.
-Alterar textos e títulos dentro de <p> e <h1>.
-Atualizar galeria de projetos: substituir imagens dentro da pasta Galeria_portfólioI e ajustar <div class="slides"> correspondente.
+HTML semântica para acessibilidade.
+
+CSS embutido para controle total do design.
+
+Layout baseado em CSS Grid e Flexbox.
+
+Checkbox toggles para modais, evitando dependência de JS.
+
+🔗 Contato
+
+Entre em contato diretamente via WhatsApp:
+
+https://wa.me/5532988397818
+
+📜 Licença
+
+Este projeto está licenciado sob a MIT License
