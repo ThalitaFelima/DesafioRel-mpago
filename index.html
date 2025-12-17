@@ -2,7 +2,10 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Travel Page</title>
+  <title>Thalita de Paula</title>
+
+  <!-- VIEWPORT (obrigatório para GitHub Pages) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,14 +33,15 @@
     /* HEADER */
     .site-header {
       background-color: #081f21;
-      padding: 100px 200px;
+      min-height: 30vh;                 /* mantém proporção */
+      padding: 4rem 6rem;               /* equivalente visual a 100/200px */
       display: flex;
       align-items: center;
-      justify-content: center; /* mobile */
+      justify-content: center;          /* mobile */
     }
 
     .site-logo {
-      height: 200px;
+      max-height: 200px;                /* mesmo tamanho visual */
       width: auto;
     }
 
@@ -47,6 +51,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+      min-height: 50vh;                 /* garante proporção */
       position: relative;
     }
 
@@ -61,8 +66,11 @@
 
     /* FAIXA */
     .band-container {
-      grid-column: 1 / 3;
-      grid-row: 2;
+      position: absolute;               /* evita dependência do grid */
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -84,14 +92,14 @@
     footer {
       background-color: #004040;
       text-align: center;
-      padding: 12px;
+      padding: 1rem;
       font-size: 0.9rem;
     }
 
     /* RESPONSIVO */
     @media (min-width: 900px) {
       .site-header {
-        justify-content: flex-start; /* desktop: esquerda */
+        justify-content: flex-start;
       }
     }
   </style>
