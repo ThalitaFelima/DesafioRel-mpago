@@ -2,25 +2,21 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Travel Page</title>
+  <title>Thalita de Paula</title>
 
-  <!-- VIEWPORT (obrigatório para GitHub Pages) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* BODY */
     body {
       min-height: 100vh;
       display: flex;
@@ -32,53 +28,68 @@
 
     /* HEADER */
     .site-header {
-      background-color: #081f21;                 /* mantém proporção */
-      padding: 4rem 6rem;               /* equivalente visual a 100/200px */
+      padding: 3rem 4rem;
       display: flex;
-      align-items: center;
-      justify-content: center;          /* mobile */
+      justify-content: center;
     }
 
     .site-logo {
-      max-height: 250pxs;                /* mesmo tamanho visual */
-      width: auto;
+      max-height: 180px;
     }
 
-    /* MAIN GRID */
+    /* GRID PRINCIPAL 2x2 */
     main {
       flex: 1;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      min-height: 50vh;                 /* garante proporção */
       position: relative;
     }
 
     /* CARDS */
     .card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    /* Cards superiores têm fundo sólido */
+    .card.top {
       background-color: #081f21;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
     }
 
-    /* FAIXA */
-    .band-container {
-      position: absolute;               /* evita dependência do grid */
-      bottom: 0;
-      left: 0;
-      width: 100%;
+    /* Cards inferiores deixam a faixa aparecer */
+    .card.bottom {
+      background-color: transparent;
+    }
+
+    /* ======================
+       CARD 2
+       ====================== */
+    .card-2 {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      background-color: #081f21;
+    }
+
+    .card-2-image {
+      height: 100%;
+    }
+
+    .card-2-image img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      padding: 1rem;
+      display: block;
+    }
+
+    .card-2-band {
       height: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-
-    .band {
-      width: 100%;
-      height: 80%;
+      align-self: center;
       background: linear-gradient(
         to right,
         #081f21 0%,
@@ -87,18 +98,44 @@
       );
     }
 
+    /* ======================
+       FAIXA CONTÍNUA (LINHA INFERIOR)
+       ====================== */
+    .bottom-band {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      align-self: center;
+      height: 50%;
+      background: linear-gradient(
+        to right,
+        #081f21 0%,
+        #004040 50%,
+        #0a2124 100%
+      );
+      z-index: 1;
+    }
+
     /* FOOTER */
     footer {
       background-color: #004040;
-      text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
+      text-align: center;
     }
 
     /* RESPONSIVO */
-    @media (min-width: 900px) {
-      .site-header {
-        justify-content: flex-start;
+    @media (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+      }
+
+      .bottom-band {
+        grid-row: auto;
+        height: 25%;
+      }
+
+      .card.bottom {
+        background-color: #081f21;
       }
     }
   </style>
@@ -106,28 +143,27 @@
 
 <body>
 
-  <!-- HEADER COM LOGO -->
   <header class="site-header">
-    <img
-      src="logo.png"
-      alt="Logotipo do site"
-      class="site-logo"
-    >
+    <img src="logo.png" alt="Logotipo" class="site-logo">
   </header>
 
-  <!-- GRID PRINCIPAL -->
   <main>
-    <div class="card">Card 1</div>
-    <div class="card">Card 2</div>
-    <div class="card">Card 3</div>
-    <div class="card">Card 4</div>
+    <div class="card top">Card 1</div>
 
-    <div class="band-container">
-      <div class="band"></div>
+    <div class="card card-2 top">
+      <div class="card-2-image">
+        <img src="profile.png" alt="Imagem do Card 2">
+      </div>
+      <div class="card-2-band"></div>
     </div>
+
+    <div class="card bottom">Card 3</div>
+    <div class="card bottom">Card 4</div>
+
+    <!-- faixa contínua real -->
+    <div class="bottom-band"></div>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     Footer da Página
   </footer>
