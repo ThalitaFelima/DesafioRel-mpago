@@ -120,4 +120,4 @@ https://wa.me/5532988397818
 📜 Licença
 
 Este projeto está licenciado sob a MIT License
-.
+
