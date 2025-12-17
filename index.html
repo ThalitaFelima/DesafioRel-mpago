@@ -285,17 +285,45 @@ footer {
 #slide3-3:checked ~ .indicators label[for="slide3-3"] { background:white; }
 
 /* RESPONSIVIDADE */
-@media (max-width:1200px) {
+
+/* Telas médias - empilhar tudo */
+@media (max-width:1024px) {
+  main { 
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  
+  .card-gradient-container {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  .card-2 { 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto;
+  }
+  
+  .card-2-image img { 
+    max-height: 300px;
+    margin: 0 auto;
+  }
+  
+  .card-2-band {
+    min-height: auto;
+  }
+  
+  .card-2-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width:800px) {
   .site-logo { max-height:150px; margin-left:40px; }
   .card-1-title { font-size:50px; }
   .card-1-text { font-size:1.6rem; line-height:2.4rem; }
   .card-2-text { font-size:1.8rem; line-height:2.6rem; }
-}
-
-@media (max-width:800px) {
+  
   main { 
-    grid-template-columns:1fr; 
-    grid-template-rows:auto auto auto; 
     padding: 0 0.75rem;
   }
   
@@ -313,35 +341,19 @@ footer {
     line-height: 2.2rem;
   }
   
-  /* Card 2 empilhado */
   .card-2 { 
-    grid-template-columns: 1fr; 
-    grid-template-rows: auto auto;
     padding: 1.5rem;
-  }
-  
-  .card-2-image img { 
-    max-height: 300px;
-    margin: 0 auto;
   }
   
   .card-2-band {
-    min-height: auto;
     padding: 1.5rem;
-  }
-  
-  .card-2-text {
-    max-width: 100%;
   }
   
   /* Gradiente e cards 3/4 */
   .card-gradient-container { 
-    grid-column: 1;
-    grid-row: 3;
     grid-template-columns:1fr; 
     padding: 2rem 1rem;
     gap: 20px;
-    height:auto; 
     min-height:350px; 
   }
   
@@ -352,7 +364,6 @@ footer {
   }
   
   .card-4 .buttons-container { 
-    flex-wrap:wrap; 
     gap:20px; 
   }
   
