@@ -43,6 +43,7 @@ main {
   gap:20px;
   position:relative;
   padding: 0 1rem;
+  width: 100%;
 }
 
 .card {
@@ -189,11 +190,25 @@ main {
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s;
+  overflow: hidden;
+  position: relative;
+  border: 4px solid #02735F;
+}
+
+.card-4 .circle-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.card-4 .circle-button:hover img {
+  transform: scale(1.1);
 }
 
 .card-4 .circle-button:hover {
-  background-color: #004040;
-  color: white;
+  border-color: #004040;
+  box-shadow: 0 0 20px rgba(2, 115, 95, 0.5);
 }
 
 footer {
@@ -289,18 +304,26 @@ footer {
 /* Telas médias - empilhar tudo */
 @media (max-width:1024px) {
   main { 
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto auto !important;
+    display: grid !important;
   }
   
   .card-gradient-container {
-    grid-column: 1;
-    grid-row: 3;
+    grid-column: 1 !important;
+    grid-row: 3 !important;
   }
   
   .card-2 { 
-    grid-template-columns: 1fr; 
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr !important; 
+    grid-template-rows: auto auto !important;
+    display: grid !important;
+  }
+  
+  .card-2-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   
   .card-2-image img { 
@@ -310,6 +333,7 @@ footer {
   
   .card-2-band {
     min-height: auto;
+    width: 100%;
   }
   
   .card-2-text {
@@ -372,7 +396,6 @@ footer {
     height:180px; 
     font-size:1.2rem; 
   }
-  
   /* Modal */
   .modal-content {
     width: 98%;
@@ -520,9 +543,15 @@ footer {
   <div class="card card-3">CONHEÇA MEU PORTFÓLIO</div>
   <div class="card card-4">
     <div class="buttons-container">
-      <label for="modal1" class="circle-button">1</label>
-      <label for="modal2" class="circle-button">2</label>
-      <label for="modal3" class="circle-button">3</label>
+      <label for="modal1" class="circle-button">
+        <img src="Galeria_portfólioI/prt1_1.png" alt="Preview Portfólio 1">
+      </label>
+      <label for="modal2" class="circle-button">
+        <img src="Galeria_portfólioI/prt2_1.png" alt="Preview Portfólio 2">
+      </label>
+      <label for="modal3" class="circle-button">
+        <img src="Galeria_portfólioI/prt3_1.png" alt="Preview Portfólio 3">
+      </label>
     </div>
   </div>
 </div>
