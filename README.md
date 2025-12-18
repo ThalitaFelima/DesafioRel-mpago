@@ -4,8 +4,8 @@ Portfólio de Thalita de Paula
 
 Bem-vindo ao repositório do portfólio pessoal de Thalita de Paula. Esta página foi criada para apresentar habilidades em UX/UI Design, Ciência de Dados e desenvolvimento web, reunindo projetos e informações profissionais de forma clara, elegante e responsiva.
 
-link da página:https://thalitafelima.github.io/DesafioRel-mpago/
-
+link da página: https://thalitafelima.github.io/DesafioRel-mpago/
+link do Figma: https://www.figma.com/design/cE9oGDTXWfjCEToPFJaGnl/Portfolio?node-id=1-2&p=f&t=W57dF12dh1itwqu0-0
 📌 Sobre a Página
 
 A página é um portfólio online responsivo, que destaca:
